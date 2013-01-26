@@ -18,8 +18,15 @@
 			?>
 			
 			<div id="content" class="clearfix row-fluid">
-			
-				<div id="main" class="span8 clearfix" role="main">
+
+                <?php
+                    $spanClass = 12;
+                    if (is_active_sidebar( 'sidebar1' )) {
+                        $spanClass = 8;
+                    }
+                ?>
+
+                <div id="main" class="span<?php echo $spanClass;?> clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					

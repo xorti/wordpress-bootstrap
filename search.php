@@ -1,9 +1,16 @@
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row-fluid">
-			
-				<div id="main" class="span8 clearfix" role="main">
-				
+
+                <?php
+                    $spanClass = 12;
+                    if (is_active_sidebar( 'sidebar1' )) {
+                        $spanClass = 8;
+                    }
+                ?>
+
+                <div id="main" class="span<?php echo $spanClass;?> clearfix" role="main">
+
 					<div class="page-header"><h1><span><?php _e("Search Results for","bonestheme"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

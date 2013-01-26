@@ -1,9 +1,16 @@
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row-fluid">
-			
-				<div id="main" class="span8 clearfix" role="main">
-				
+
+                <?php
+                    $spanClass = 12;
+                    if (is_active_sidebar( 'sidebar1' )) {
+                        $spanClass = 8;
+                    }
+                ?>
+
+                <div id="main" class="span<?php echo $spanClass;?> clearfix" role="main">
+
 					<div class="page-header">
 					<?php if (is_category()) { ?>
 						<h1 class="archive_title h2">
